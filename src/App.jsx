@@ -1,9 +1,9 @@
 import ContainerCaptcha from "./components/ContainerCaptcha"
-import { useAWSWAFCaptchaFetch } from "./hooks/useFetchApi"
+import { useFetchApi } from "./hooks/useFetchApi";
 
 function App() {
 
-  const {fetchApi } = useAWSWAFCaptchaFetch();
+  const {fetchApi } = useFetchApi();
 
 
   const showCaptcha = async () => {

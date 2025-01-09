@@ -5,7 +5,7 @@ import { getWAFEnv } from "../utils"
  *
  * @returns {Function} Une fonction `captchaFetch` permettant d'effectuer une requête fetch après validation du captcha.
  */
-export function useAWSWAFCaptchaFetch() {
+export function useFetchApi() {
     /**
      * Effectue une requête fetch avec validation via AWS WAF Captcha.
      *
