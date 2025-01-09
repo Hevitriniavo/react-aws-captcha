@@ -19,10 +19,10 @@ async function fetchEnvironment() {
 
   export function loadScript () {
     if (document.getElementById('AwsWAFScript')) return
-  
+
     const AwsWafScript = document.createElement('script')
     AwsWafScript.id = 'AwsWAFScript'
     AwsWafScript.async = false
-    AwsWafScript.src = getWAFEnv().JSAPI_URL
+    AwsWafScript.src = getWAFEnv().VITE_JSAPI_URL
     document.head.appendChild(AwsWafScript)
   }

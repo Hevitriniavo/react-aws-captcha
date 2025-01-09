@@ -6,12 +6,13 @@ import { loadWAFEnv } from './utils/index.js';
 (async () => {
   try {
     await loadWAFEnv();
+
     createRoot(document.getElementById('root')).render(
       <StrictMode>
         <App />
       </StrictMode>
     );
   } catch (error) {
-    console.error('Failed to load AWS WAF environment:', error);
+    console.error('Failed to initialize the application:', error);
   }
 })();

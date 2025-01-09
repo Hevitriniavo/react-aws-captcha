@@ -1,12 +1,28 @@
+import ContainerCaptcha from "./components/ContainerCaptcha"
+import { useAWSWAFCaptchaFetch } from "./hooks/useFetchApi"
 
 function App() {
 
-  console.log('AWS WAF environment loaded:', window.AWS_WAF_ENV);
+  const {fetchApi } = useAWSWAFCaptchaFetch();
+
+
+  const showCaptcha = async () => {
+      try {
+        const response = await fetchApi('https://jsonplaceholder.typicode.com/posts', {
+          method: 'GET'
+        })
+        const data = await response.json()
+    
+        console.log('Données récupérées depuis JSONPlaceholder :', data)
+      } catch (error) {
+        console.error('Erreur lors de la requête fetch avec captcha :', error)
+      }
+  }
 
   return (
     <>
-
-      <button>show captcha</button>
+       <ContainerCaptcha />
+      <button onClick={showCaptcha}>show captcha</button>
     </>
   )
 }
